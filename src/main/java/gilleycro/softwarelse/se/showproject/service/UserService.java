@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 @Service
 public class UserService {
 
-    private final HazelcastInstance hazelcastInstance = Hazelcast.newHazelcastInstance();
+    private final HazelcastInstance hazelcastInstance = Hazelcast.getHazelcastInstanceByName("hazel-instance");
     IMap<Long, User> map = hazelcastInstance.getMap("users");
 
     private UserRepository userRepository;

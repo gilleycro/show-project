@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class StartupScheduledJob {
 
-    private final HazelcastInstance hazelcastInstance = Hazelcast.newHazelcastInstance();
+    private final HazelcastInstance hazelcastInstance = Hazelcast.getHazelcastInstanceByName("hazel-instance");
     IMap<Long, User> map = hazelcastInstance.getMap("users");
 
     @Autowired
