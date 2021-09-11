@@ -1,12 +1,8 @@
 package gilleycro.softwarelse.se.showproject.controller;
 
-import com.hazelcast.core.Hazelcast;
-import com.hazelcast.core.HazelcastInstance;
-import com.hazelcast.map.IMap;
 import gilleycro.softwarelse.se.showproject.model.User;
 import gilleycro.softwarelse.se.showproject.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
