@@ -22,9 +22,7 @@ public class StartupScheduledJob {
     //sync hazelcast with db
     @EventListener(ApplicationReadyEvent.class)
     public void loadData() {
-           userRepository.findAll().forEach( it -> {
-               map.put(it.getId(), it);
-           });
+           //do nothing
     }
 
 }

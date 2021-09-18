@@ -22,7 +22,9 @@ public class HazelcastConfig {
         return new Config()
                 .setInstanceName("hazel-instance")
                 .addMapConfig(new MapConfig()
-                        .setName("users"));
+                        .setName("users")
+                        .setName("jobs"));
+
     }
 }
 
