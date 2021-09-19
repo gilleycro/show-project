@@ -12,10 +12,10 @@ import java.util.Date;
 @Data
 @NoArgsConstructor
 @Entity
+@Table(name="match")
 public class Match {
 
-    @Id()
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
     private long matchId;
 
     @Enumerated(EnumType.STRING)
