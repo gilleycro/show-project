@@ -28,14 +28,14 @@ CREATE TABLE match
     primary key (match_id)
 );
 
-CREATE TABLE ticket_match
+CREATE TABLE ticket_matches
 (
-    id        serial,
-    match_id  bigint,
     ticket_id bigint,
-    FOREIGN KEY (match_id)
-        REFERENCES match (match_id),
-    FOREIGN KEY (ticket_id)
-        REFERENCES ticket (ticket_id),
-    primary key (id)
+    match_id bigint,
+    constraint ticket_pk primary key (ticket_id, match_id),
+    constraint fk_ticket
+        foreign key (ticket_id) references ticket(ticket_id),
+    constraint fk_match
+        foreign key (match_id) references match(match_id)
 );
+

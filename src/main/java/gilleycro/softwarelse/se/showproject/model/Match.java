@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.Instant;
-import java.util.Date;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -16,6 +16,9 @@ import java.util.Date;
 public class Match {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="match_generator")
+    @SequenceGenerator(name = "match_generator", sequenceName = "match_sequence", allocationSize = 1)
+
     private long matchId;
 
     @Enumerated(EnumType.STRING)
